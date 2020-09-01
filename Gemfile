@@ -51,6 +51,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rack_session_access'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -60,6 +61,7 @@ gem 'rails-i18n'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem "aws-sdk-s3", require: false
+gem 'omniauth-twitter'
 
 group :production do
   gem 'rails_12factor'
