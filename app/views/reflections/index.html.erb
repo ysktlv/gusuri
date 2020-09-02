@@ -2,3 +2,10 @@
 <div class="info">
   マイページ
 </div>
+<div class="goals">
+  <%= form_with model: @reflection, local: true do |f| %>
+    <%= f.text_field :impression, class: "impression" %>
+    <%= f.collection_check_boxes :goal_ids, Goal.all, :id, :name %>
+    <%= f.submit %>
+  <% end %>
+</div>
