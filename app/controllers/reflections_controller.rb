@@ -11,9 +11,17 @@ class ReflectionsController < ApplicationController
   def create
     @reflection = Reflection.new(reflection_params)
     if @reflection.save
-      redirect_to reflections_path
+      redirect_to reflection_path(@reflection)
     else
       render :new
+    end
+  end
+
+  def show
+    @reflection = Reflection.find(params[:id])
+    @points = []
+    @reflection.goal_reflections.each do |goal_reflection|
+      @points.push(goal_reflection.goal.point)
     end
   end
 
