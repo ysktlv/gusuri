@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_120217) do
   end
 
   create_table "reflections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "start_time", null: false
     t.string "impression"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

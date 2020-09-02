@@ -2,10 +2,7 @@ class ReflectionsController < ApplicationController
   before_action :move_to_login
 
   def index
-    @goal = Goal.all
-  end
-
-  def new
+    @reflections = Reflection.all
   end
 
   def create
@@ -32,6 +29,6 @@ class ReflectionsController < ApplicationController
   end
 
   def reflection_params
-    params.permit(:impression, {goal_ids: []})
+    params.permit(:start_time, :impression, {goal_ids: []})
   end
 end
