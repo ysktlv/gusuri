@@ -3,8 +3,8 @@ class Goal < ApplicationRecord
   has_many :goal_reflections, dependent: :destroy
   has_many :reflections, through: :goal_reflections
 
-  VALID_POINT_REGEX = /^[0-9]+$/
+  VALID_POINT_REGEX = /\A[0-9]+\z/.freeze
 
   validates :name, presence: true
-  validates :point, presence: true, format: { with: VALID_POINT_REGEX, message: "は半角整数を使用してください" }
+  validates :point, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 100, message: "は1~100の範囲で設定してください" }
 end
