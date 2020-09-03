@@ -6,10 +6,11 @@
   <%= @reflection.impression %>
 </div>
 <div class="judgment">
-  <% if @points.sum >= 15 %>
+  <% if @points.sum >= 100 %>
     合格
   <% else %>
     不合格
   <% end %>
 </div>
+<%= link_to "編集", edit_reflection_path(@reflection) %>
 <%= button_to "ツイート", reflection_tweets_path(@reflection) %>
