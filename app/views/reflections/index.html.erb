@@ -10,6 +10,9 @@
     <%= f.submit %>
   <% end %>
 </div>
+<div class="point_edit">
+  <%= link_to "ポイント項目編集", new_goal_path %>
+</div>
 <%= month_calendar events: @reflections do |date, reflections| %>
   <%= date.day %>
   <% reflections.each do |reflection| %>

@@ -12,10 +12,26 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.new(goal_params)
+
     if @goal.save
       redirect_to new_goal_path
     else
       render :new
+    end
+  end
+
+  def edit
+    @goal = Goal.find(params[:id])
+    redirect_to root_path unless logged_in? && current_user.id == @goal.user_id
+  end
+
+  def update
+    @goal = Goal.find(params[:id])
+    
+    if @goal.update(goal_params)
+      redirect_to new_goal_path
+    else
+      render :edit
     end
   end
 

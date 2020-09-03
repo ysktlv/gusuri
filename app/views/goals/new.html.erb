@@ -1,14 +1,14 @@
 <%= render "shared/header" %>
-新規登録
-<div class="goals">
+<div class="goals_lists">
   <% if @goals.present? %>
     <% @goals.each do |goal| %>
       <%= goal.name %>
       <%= goal.point %>
+      <%= link_to "編集", edit_goal_path(goal) %>
     <% end %>
   <% end %>
 </div>
-<div class="new_goals">
+<div class="goals">
   <%= form_with model: @goal, local: true do |f| %>
     <%= f.text_field :name %>
     <%= f.number_field :point %>
