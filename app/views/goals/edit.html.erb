@@ -2,6 +2,7 @@
 ポイント項目編集
 <div class="goals">
   <%= form_with model: @goal, local: true do |f| %>
+  <%= render "shared/error_messages", model: f.object %>
     <%= f.text_field :name %>
     <%= f.number_field :point %>
     <%= f.submit %>

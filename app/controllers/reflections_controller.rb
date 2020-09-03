@@ -4,6 +4,7 @@ class ReflectionsController < ApplicationController
 
   def index
     @reflections = Reflection.all
+    @reflection = Reflection.new
   end
 
   def create
