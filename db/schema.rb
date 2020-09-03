@@ -24,15 +24,19 @@ ActiveRecord::Schema.define(version: 2020_09_01_120217) do
   create_table "goals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "point", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "reflections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "start_time", null: false
-    t.string "impression"
+    t.string "impression", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reflections_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -46,4 +50,6 @@ ActiveRecord::Schema.define(version: 2020_09_01_120217) do
 
   add_foreign_key "goal_reflections", "goals"
   add_foreign_key "goal_reflections", "reflections"
+  add_foreign_key "goals", "users"
+  add_foreign_key "reflections", "users"
 end

@@ -1,0 +1,25 @@
+<%= render "shared/header" %>
+新規登録
+<div class="goals">
+  <% if @goals.present? %>
+    <% @goals.each do |goal| %>
+      <%= goal.name %>
+      <%= goal.point %>
+    <% end %>
+  <% end %>
+</div>
+<div class="new_goals">
+  <%= form_with model: @goal, local: true do |f| %>
+    <%= f.text_field :name %>
+    <%= f.number_field :point %>
+    <%= f.submit %>
+  <% end %>
+</div>
+<div class="save">
+  <%= link_to "保存する", reflections_path %>
+</div>
+例
+<div class="recommended">
+生きてる 10
+健康 5
+</div>

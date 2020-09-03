@@ -29,6 +29,6 @@ class ReflectionsController < ApplicationController
   end
 
   def reflection_params
-    params.permit(:start_time, :impression, {goal_ids: []})
+    params.permit(:start_time, :impression, :user_id, {goal_ids: []})
   end
 end

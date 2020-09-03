@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
       if new_user.save
         log_in new_user
       end
-      redirect_to reflections_path
+      redirect_to new_goal_path
     end
   end
 

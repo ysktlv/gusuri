@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :reflections do
     resources :tweets
   end
+  resources :goals
 end
