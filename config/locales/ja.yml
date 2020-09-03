@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+      reflection:
+        start_time: 日付
+        impression: ひとこと
+      goal:
+        name: 目標
+        point: ポイント
