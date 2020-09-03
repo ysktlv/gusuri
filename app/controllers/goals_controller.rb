@@ -1,5 +1,6 @@
 class GoalsController < ApplicationController
   before_action :move_to_login
+  before_action :set_goal, only: [:edit, :update, :destroy]
 
   def index
     @goals = Goal.all
@@ -21,18 +22,20 @@ class GoalsController < ApplicationController
   end
 
   def edit
-    @goal = Goal.find(params[:id])
     redirect_to root_path unless logged_in? && current_user.id == @goal.user_id
   end
 
   def update
-    @goal = Goal.find(params[:id])
-    
     if @goal.update(goal_params)
       redirect_to new_goal_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @goal.destroy
+    redirect_to new_goal_path
   end
 
   private
@@ -43,5 +46,9 @@ class GoalsController < ApplicationController
 
   def goal_params
     params.require(:goal).permit(:name, :point).merge(user_id: current_user.id)
+  end
+
+  def set_goal
+    @goal = Goal.find(params[:id])
   end
 end
