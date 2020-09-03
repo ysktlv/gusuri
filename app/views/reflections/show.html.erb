@@ -13,4 +13,5 @@
   <% end %>
 </div>
 <%= link_to "編集", edit_reflection_path(@reflection) %>
+<%= link_to "削除", reflection_path(@reflection), method: :delete %>
 <%= button_to "ツイート", reflection_tweets_path(@reflection) %>

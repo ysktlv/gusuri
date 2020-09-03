@@ -35,6 +35,11 @@ class ReflectionsController < ApplicationController
     end
   end
 
+  def destroy
+    @reflection.destroy
+    redirect_to reflections_path
+  end
+
   private
 
   def move_to_login
