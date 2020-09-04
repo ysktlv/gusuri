@@ -8,6 +8,7 @@ class ReflectionsController < ApplicationController
   end
 
   def create
+    @reflections = Reflection.all
     @reflection = Reflection.new(reflection_params)
 
     if @reflection.save
@@ -29,7 +30,7 @@ class ReflectionsController < ApplicationController
   end
 
   def update
-    if @reflection.update(edit_reflection_params)
+    if @reflection.update(reflection_params)
       redirect_to reflection_path(@reflection)
     else
       render :edit
@@ -48,10 +49,6 @@ class ReflectionsController < ApplicationController
   end
 
   def reflection_params
-    params.permit(:start_time, :impression, :user_id, {goal_ids: []}).merge(user_id: current_user.id)
-  end
-
-  def edit_reflection_params
     params.require(:reflection).permit(:start_time, :impression, :user_id, {goal_ids: []}).merge(user_id: current_user.id)
   end
 
