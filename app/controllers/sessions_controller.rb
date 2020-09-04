@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
+
   def index
+    redirect_to reflections_path if logged_in?
   end
 
   def create
@@ -24,7 +26,6 @@ class SessionsController < ApplicationController
       redirect_to new_goal_path
     end
   end
-
 
   def destroy
     log_out if logged_in?
