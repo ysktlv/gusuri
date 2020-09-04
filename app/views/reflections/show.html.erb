@@ -1,8 +1,5 @@
 <div class="points">
-  <%= @points.sum %>
-</div>
-<div class="impression">
-  <%= @reflection.impression %>
+  <%= @points.sum %> / 100
 </div>
 <div class="judgment">
   <% if @points.sum >= 100 %>
@@ -10,6 +7,14 @@
   <% else %>
     不合格
   <% end %>
+</div>
+<div class="achievement">
+  <% @reflection.goal_reflections.each do |goal_reflection| %>
+    <%= goal_reflection.goal.name %>
+  <% end %>
+</div>
+<div class="impression">
+  <%= @reflection.impression %>
 </div>
 <%= link_to "編集", edit_reflection_path(@reflection) %>
 <%= link_to "削除", reflection_path(@reflection), method: :delete %>
