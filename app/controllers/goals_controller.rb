@@ -3,11 +3,11 @@ class GoalsController < ApplicationController
   before_action :set_goal, only: [:edit, :update, :destroy]
 
   def index
-    @goals = Goal.all
+    @goals = Goal.where(user_id: current_user.id)
   end
 
   def new
-    @goals = Goal.all
+    @goals = Goal.where(user_id: current_user.id)
     @goal = Goal.new
   end
 

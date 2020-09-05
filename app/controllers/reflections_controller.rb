@@ -3,16 +3,16 @@ class ReflectionsController < ApplicationController
   before_action :set_reflection, only: [:show, :edit, :update, :destroy]
 
   def index
-    @reflections = Reflection.all
+    @reflections = Reflection.where(user_id: current_user.id)
     @reflection = Reflection.new
   end
 
   def create
-    @reflections = Reflection.all
+    @reflections = Reflection.where(user_id: current_user.id)
     @reflection = Reflection.new(reflection_params)
 
     if @reflection.save
-      redirect_to reflection_path(@reflection)
+      redirect_to reflections_path(@reflection)
     else
       render :index
     end
@@ -49,7 +49,7 @@ class ReflectionsController < ApplicationController
   end
 
   def reflection_params
-    params.require(:reflection).permit(:start_time, :impression, :user_id, {goal_ids: []}).merge(user_id: current_user.id)
+    params.require(:reflection).permit(:start_time, :impression, {goal_ids: []}).merge(user_id: current_user.id)
   end
 
   def set_reflection
