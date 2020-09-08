@@ -1,6 +1,19 @@
-<% if logged_in? %>
-  <%= link_to "ログアウト", logout_path %>
-  <%= link_to "マイページ", reflections_path %>
-<% else %>
-  <a href="/auth/twitter">Twitterログイン</a>
-<% end %>
+<header class="header">
+  <div class="header-left">
+    <%= link_to "GUSURI", root_path, class: "app-name" %>
+  </div>
+  <div class="header-right">
+    <div class="user-name">
+      @<%= current_user.nickname %>
+    </div>
+    <div class="menu">
+      <% if logged_in? %>
+        <%= link_to "ログアウト", logout_path, class: "logout" %>
+        <%= link_to "マイページ", reflections_path, class: "mypage" %>
+      <% else %>
+        <a href="/auth/twitter">Twitterログイン</a>
+        <%= link_to "Twitterログイン", "/auth/twitter", class: "login" %>
+      <% end %>
+    </div>
+  </div>
+</header>

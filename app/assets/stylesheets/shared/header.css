@@ -1,0 +1,37 @@
+.header {
+  width: 100vw;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #164a84;
+}
+
+.header-left {
+  margin-left: 30px;
+}
+
+.app-name {
+  color: white;
+  text-decoration: none;
+}
+
+.header-right {
+  margin-right: 30px;
+  display: flex;
+}
+
+.user-name {
+  color: white;
+  margin-right: 16px;
+}
+
+.logout {
+  color: white;
+  text-decoration: none;
+}
+
+.mypage {
+  color: white;
+  text-decoration: none;
+}
