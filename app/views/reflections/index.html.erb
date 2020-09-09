@@ -1,23 +1,35 @@
-<div class="info">
-  マイページ
-</div>
-<div class="reflections">
-  <%= form_with model: @reflection, local: true do |f| %>
-  <%= render "shared/error_messages", model: f.object %>
-    <%= f.date_field :start_time %>
-    <%= f.text_field :impression %>
-    <%= f.collection_check_boxes :goal_ids, Goal.where(user_id: current_user.id), :id, :name %>
-    <%= f.submit %>
-  <% end %>
-</div>
-<div class="point_edit">
-  <%= link_to "ポイント項目編集", new_goal_path %>
-</div>
-<%= month_calendar events: @reflections do |date, reflections| %>
-  <%= date.day %>
-  <% reflections.each do |reflection| %>
-    <div>
-      <%= link_to reflection.impression, reflection_path(reflection) %>
+<div class="main">
+  <div class="main-content">
+    <div class="reflection">
+      <%= form_with model: @reflection, local: true do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
+        <div class="reflection-section">
+          <%= f.date_field :start_time, class: "date" %>
+        </div>
+        <div class="reflection-section">
+          <%= f.collection_check_boxes :goal_ids, Goal.where(user_id: current_user.id), :id, :name do |b| %>
+              <%= b.check_box %>
+              <%= b.label class: "checkbox" %>
+          <% end %>
+          <%= link_to new_goal_path do %>
+            <i class="far fa-plus-square plus"></i>
+          <% end %>
+        </div>
+        <div class="reflection-section">
+          <%= f.text_field :impression, class: "impression", placeholder: "ひとこと" %>
+          <%= f.submit "登録", class: "submit" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-<% end %>
+    <div class="calendar">
+      <%= month_calendar events: @reflections do |date, reflections| %>
+        <%= date.day %>
+        <% reflections.each do |reflection| %>
+          <div>
+            <%= link_to reflection.impression, reflection_path(reflection) %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

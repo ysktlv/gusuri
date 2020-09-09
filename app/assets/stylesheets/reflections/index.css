@@ -1,0 +1,139 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  width: 60vw;
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reflection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.reflection-section {
+  display: flex;
+  margin: 10px 0px;
+  align-items: center;
+}
+
+.date {
+  color: #164a84;
+  border: 1px solid #164a84;
+  border-radius: 5px;
+}
+
+input[type=date]{
+  width: 105px;
+  height: 44px;
+  position: relative;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+input[type=date]::-webkit-date-edit {
+  padding: 5px;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.checkbox {
+  box-sizing: border-box;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+  position: relative;
+  display: inline-block;
+  margin: 10px 10px 10px 0px;
+  padding: 12px 12px 12px 42px;
+  border: 1px solid #164a84;
+  border-radius: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #164a84;
+}
+
+.checkbox:hover {
+  background-color: #a7bed1;
+}
+
+.checkbox:hover:after {
+  border-color: #164a84;
+}
+
+.checkbox:after {
+  -webkit-transition: border-color 0.2s linear;
+  transition: border-color 0.2s linear;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  display: block;
+  margin-top: -10px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #a7bed1;
+  border-radius: 20%;
+  content: '';
+}
+
+.checkbox:before {
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  display: block;
+  margin-top: -7px;
+  width: 5px;
+  height: 9px;
+  border-right: 3px solid #164a84;
+  border-bottom: 3px solid #164a84;
+  content: '';
+  opacity: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+input[type=checkbox]:checked + .checkbox:before {
+  opacity: 1;
+}
+
+.plus {
+  font-size: 2em;
+  color: #164a84;
+}
+
+input[type=text] {
+  width: 300px;
+  height: 44px;
+  margin-right: 10px;
+}
+
+.impression {
+  border: 1px solid #164a84;
+  border-radius: 5px;
+  color: #164a84;
+}
+
+::placeholder {
+  color: #164a84;
+}
+
+input[type=submit] {
+  background-color: #164a84;
+  color: white;
+  border-radius: 5px;
+}
