@@ -1,3 +1,10 @@
+body,
+  #wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
 .footer {
   width: 100vw;
   height: 60px;
@@ -5,6 +12,7 @@
   justify-content: center;
   align-items: center;
   background-color: #507ea4;
+  margin-top: auto;
 }
 
 .footer-links {
