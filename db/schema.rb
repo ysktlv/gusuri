@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_120217) do
+ActiveRecord::Schema.define(version: 2020_09_10_064434) do
 
   create_table "goal_reflections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "goal_id", null: false
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 2020_09_01_120217) do
     t.index ["user_id"], name: "index_reflections_on_user_id"
   end
 
+  create_table "total_points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "point", null: false
+    t.bigint "reflection_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reflection_id"], name: "index_total_points_on_reflection_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "uid"
     t.string "nickname"
@@ -52,4 +60,5 @@ ActiveRecord::Schema.define(version: 2020_09_01_120217) do
   add_foreign_key "goal_reflections", "reflections"
   add_foreign_key "goals", "users"
   add_foreign_key "reflections", "users"
+  add_foreign_key "total_points", "reflections"
 end

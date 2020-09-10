@@ -20,6 +20,8 @@ class SessionsController < ApplicationController
         name: user_data[:info][:name],
         image: user_data[:info][:image],
       )
+      session[:oauth_token] = user_data[:credentials][:token]
+      session[:oauth_token_secret] = user_data[:credentials][:secret]
       if new_user.save
         log_in new_user
       end

@@ -23,6 +23,14 @@ class ReflectionsController < ApplicationController
     @reflection.goal_reflections.each do |goal_reflection|
       @points.push(goal_reflection.goal.point)
     end
+    if TotalPoint.exists?(reflection_id: @reflection.id)
+      @totalpoint = TotalPoint.find_by(reflection_id: @reflection.id)
+      @totalpoint.point = @points.sum
+      @totalpoint.save
+    else
+      TotalPoint.create(point: @points.sum, reflection_id: @reflection.id)
+    end
+    @total_point = TotalPoint.find_by(reflection_id: @reflection.id)
   end
 
   def edit

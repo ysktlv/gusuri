@@ -2,6 +2,7 @@ class Reflection < ApplicationRecord
   belongs_to :user
   has_many :goal_reflections, dependent: :destroy
   has_many :goals, through: :goal_reflections
+  has_one :total_point, dependent: :destroy
 
   validate :not_after_today
   validates :impression, presence: true

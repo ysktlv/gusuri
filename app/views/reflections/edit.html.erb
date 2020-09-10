@@ -1,9 +1,21 @@
-<div class="reflections">
+<div class="reflection">
   <%= form_with model: @reflection, local: true do |f| %>
-  <%= render "shared/error_messages", model: f.object %>
-    <%= f.date_field :start_time %>
-    <%= f.text_field :impression %>
-    <%= f.collection_check_boxes :goal_ids, Goal.all, :id, :name %>
-    <%= f.submit %>
+    <%= render "shared/error_messages", model: f.object %>
+    <div class="reflection-section">
+      <%= f.date_field :start_time, class: "date" %>
+    </div>
+    <div class="reflection-section">
+      <%= f.collection_check_boxes :goal_ids, Goal.where(user_id: current_user.id), :id, :name do |b| %>
+          <%= b.check_box %>
+          <%= b.label class: "checkbox" %>
+      <% end %>
+      <%= link_to new_goal_path do %>
+        <i class="far fa-plus-square plus"></i>
+      <% end %>
+    </div>
+    <div class="reflection-section">
+      <%= f.text_field :impression, class: "impression", placeholder: "  ひとこと" %>
+      <%= f.submit "更新", class: "submit" %>
+    </div>
   <% end %>
 </div>
