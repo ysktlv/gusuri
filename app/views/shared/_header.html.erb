@@ -3,17 +3,12 @@
     <%= link_to "GUSURI", root_path, class: "app-name" %>
   </div>
   <div class="header-right">
-    <div class="user-name">
-      @<%= current_user.nickname %>
-    </div>
-    <div class="menu">
-      <% if logged_in? %>
-        <%= link_to "ログアウト", logout_path, class: "logout" %>
-        <%= link_to "マイページ", reflections_path, class: "mypage" %>
-      <% else %>
-        <a href="/auth/twitter">Twitterログイン</a>
-        <%= link_to "Twitterログイン", "/auth/twitter", class: "login" %>
-      <% end %>
-    </div>
+    <% if logged_in? %>
+      <span class="header-content">@<%= current_user.nickname %></span>
+      <%= link_to "ログアウト", logout_path, class: "header-content" %>
+      <%= link_to "マイページ", reflections_path, class: "header-content" %>
+    <% else %>
+      <%= link_to "Twitterログイン", "/auth/twitter", class: "header-content" %>
+    <% end %>
   </div>
 </div>

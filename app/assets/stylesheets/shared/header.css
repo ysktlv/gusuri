@@ -21,17 +21,8 @@
   display: flex;
 }
 
-.user-name {
-  color: white;
-  margin-right: 16px;
-}
-
-.logout {
+.header-content {
   color: white;
   text-decoration: none;
-}
-
-.mypage {
-  color: white;
-  text-decoration: none;
+  margin-left: 20px;
 }
