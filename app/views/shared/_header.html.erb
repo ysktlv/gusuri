@@ -5,8 +5,17 @@
   <div class="header-right">
     <% if logged_in? %>
       <span class="header-content">@<%= current_user.nickname %></span>
-      <%= link_to "ログアウト", logout_path, class: "header-content" %>
-      <%= link_to "マイページ", reflections_path, class: "header-content" %>
+      <div class="dropdown">
+        <button class="dropdown-btn" id="dropdown-btn">
+          <i class="fas fa-chevron-down down"></i>
+        </button>
+        <div class="dropdown-body">
+          <ul class="dropdown-list">
+            <li class="dropdown-item"><%= link_to "ログアウト", logout_path, class: "dropdown-item-link" %></li>
+            <li class="dropdown-item"><%= link_to "マイページ", reflections_path, class: "dropdown-item-link" %></li>
+          </ul>
+        </div>
+      </div>
     <% else %>
       <%= link_to "Twitterログイン", "/auth/twitter", class: "header-content" %>
     <% end %>
