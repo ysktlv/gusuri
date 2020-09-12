@@ -1,26 +1,27 @@
-<div class="day">
-   <%= @reflection.start_time.month %>
-   /
-   <%= @reflection.start_time.day%>
+<div class="main">
+  <div class="show-main-content">
+    <div class="reflection-date">
+      <%= @reflection.start_time.month %>/<%= @reflection.start_time.day%>
+    </div>
+    <div class="achievement">
+      <% @reflection.goal_reflections.each do |goal_reflection| %>
+        <%= goal_reflection.goal.name %>
+      <% end %>
+    </div>
+    <div class="points">
+      <span class="total-point"><%= @total_point.point %></span>/100
+    </div>
+    <div class="judgement">
+      <% if @total_point.point >= 100 %>
+        合格
+      <% else %>
+        不合格
+      <% end %>
+    </div>
+    <div class="links">
+      <%= button_to "編集", edit_reflection_path(@reflection), method: :get, class: "link" %>
+      <%= button_to "削除", reflection_path(@reflection), method: :delete, class: "link" %>
+    </div>
+    <%= button_to "ツイート", reflection_tweets_path(@reflection), class: "tweet" %>
+  </div>
 </div>
-<div class="points">
-  <%= @total_point.point %> / 100
-</div>
-<div class="judgment">
-  <% if @total_point.point >= 100 %>
-    合格
-  <% else %>
-    不合格
-  <% end %>
-</div>
-<div class="achievement">
-  <% @reflection.goal_reflections.each do |goal_reflection| %>
-    <%= goal_reflection.goal.name %>
-  <% end %>
-</div>
-<div class="impression">
-  <%= @reflection.impression %>
-</div>
-<%= link_to "編集", edit_reflection_path(@reflection) %>
-<%= link_to "削除", reflection_path(@reflection), method: :delete %>
-<%= button_to "ツイート", reflection_tweets_path(@reflection) %>
