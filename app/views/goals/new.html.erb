@@ -4,8 +4,8 @@
       <% if @goals.present? %>
         <% @goals.each do |goal| %>
           <div class="goals">
-            <span class="goal"><%= goal.name %></span>
-            <span class="goal"><%= goal.point %>point</span>
+            <span class="goal-name"><%= goal.name %></span>
+            <span class="goal-point"><%= goal.point %>ポイント</span>
             <%= button_to "編集", edit_goal_path(goal), method: :get, class: "link margin" %>
             <%= button_to "削除", goal_path(goal), method: :delete, class: "link" %>
           </div>
@@ -16,7 +16,7 @@
       <%= form_with model: @goal, local: true do |f| %>
       <%= render "shared/error_messages", model: f.object %>
         <%= f.text_field :name, placeholder: "項目", class: "new-goal-name" %>
-        <%= f.number_field :point, placeholder: "点数", class: "new-goal-point" %>
+        <%= f.number_field :point, placeholder: "ポイント", class: "new-goal-point" %>
         <%= f.submit "追加", class: "link" %>
       <% end %>
     </div>
@@ -24,9 +24,31 @@
       <%= button_to "保存する", reflections_path, method: :get, class: "save" %>
     </div>
     <div class="recommended">
-    例
-    生きてる 10
-    健康 5
+      <div class="recommended-title">
+        おすすめ
+      </div>
+      <div class="recommended-goals">
+        <div class="recommended-goal">
+          <span class="recommended-goal-name">生きてるだけでえらい！</span>
+          <span class="recommended-goal-point">50ポイント</span>
+        </div>
+        <div class="recommended-goal">
+          <span class="recommended-goal-name">健康なだけでえらい！</span>
+          <span class="recommended-goal-point">25ポイント</span>
+        </div>
+        <div class="recommended-goal">
+          <span class="recommended-goal-name">掃除機をかけた！すっきり！</span>
+          <span class="recommended-goal-point">20ポイント</span>
+        </div>
+        <div class="recommended-goal">
+          <span class="recommended-goal-name">日光をあびた！ビタミン！</span>
+          <span class="recommended-goal-point">20ポイント</span>
+        </div>
+        <div class="recommended-goal">
+          <span class="recommended-goal-name">洗い物をした！すっきり！</span>
+          <span class="recommended-goal-point">15ポイント</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -10,9 +10,16 @@
   margin-bottom: 24px;
 }
 
-.goal {
+.goal-name {
   color: #164a84;
   margin-right: 24px;
+  width: 360px;
+}
+
+.goal-point {
+  color: #164a84;
+  margin-right: 24px;
+  width: 90px;
 }
 
 .margin {
@@ -43,9 +50,44 @@ input[type=number] {
   color: #164a84;
 }
 
+.save {
+  margin-left: auto;
+}
+
 input[type=submit].save {
   height: 32px;
   width: 100px;
   border-radius: 20px;
-  margin-top: 48px;
+  margin-bottom: 36px;
+}
+
+.recommended {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #164a84;
+}
+
+.recommended-title {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.recommended-goals {
+  display: flex;
+  flex-direction: column;
+}
+
+.recommended-goal {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.recommended-goal-name {
+  width: 350px;
+}
+
+.recommended-goal-point {
+  width: 350px;
 }
