@@ -13,9 +13,11 @@
     </div>
     <div class="judgement">
       <% if @total_point.point >= 100 %>
-        合格
+        <span class="pass">合格</span>
+        <span class="message">ぐっすり寝れる！やったね！</span>
       <% else %>
-        不合格
+        <span class="pass">不合格</span>
+        <span class="message">明日頑張るために今日は早く寝よう！</span>
       <% end %>
     </div>
     <div class="links">
