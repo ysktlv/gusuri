@@ -119,7 +119,7 @@ input[type=checkbox]:checked + .checkbox:before {
 
 input[type=text] {
   width: 300px;
-  height: 44px;
+  height: 42px;
   margin-right: 10px;
   text-indent: 1em;
 }
@@ -131,7 +131,8 @@ input[type=text] {
 }
 
 ::placeholder {
-  color: #164a84;
+  color: #a7bed1;
+  font-weight: bold;
 }
 
 input[type=submit] {

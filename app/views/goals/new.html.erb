@@ -1,26 +1,32 @@
-<div class="goals_lists">
-  <% if @goals.present? %>
-    <% @goals.each do |goal| %>
-      <%= goal.name %>
-      <%= goal.point %>
-      <%= link_to "編集", edit_goal_path(goal) %>
-      <%= link_to "削除", goal_path(goal), method: :delete %>
-    <% end %>
-  <% end %>
-</div>
-<div class="goals">
-  <%= form_with model: @goal, local: true do |f| %>
-  <%= render "shared/error_messages", model: f.object %>
-    <%= f.text_field :name %>
-    <%= f.number_field :point %>
-    <%= f.submit %>
-  <% end %>
-</div>
-<div class="save">
-  <%= link_to "保存する", reflections_path %>
-</div>
-例
-<div class="recommended">
-生きてる 10
-健康 5
+<div class="main">
+  <div class="main-content">
+    <div class="goals-lists">
+      <% if @goals.present? %>
+        <% @goals.each do |goal| %>
+          <div class="goals">
+            <span class="goal"><%= goal.name %></span>
+            <span class="goal"><%= goal.point %>point</span>
+            <%= button_to "編集", edit_goal_path(goal), method: :get, class: "link margin" %>
+            <%= button_to "削除", goal_path(goal), method: :delete, class: "link" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="new-goals">
+      <%= form_with model: @goal, local: true do |f| %>
+      <%= render "shared/error_messages", model: f.object %>
+        <%= f.text_field :name, placeholder: "項目", class: "new-goal-name" %>
+        <%= f.number_field :point, placeholder: "点数", class: "new-goal-point" %>
+        <%= f.submit "追加", class: "link" %>
+      <% end %>
+    </div>
+    <div class="save">
+      <%= button_to "保存する", reflections_path, method: :get, class: "save" %>
+    </div>
+    <div class="recommended">
+    例
+    生きてる 10
+    健康 5
+    </div>
+  </div>
 </div>
