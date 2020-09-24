@@ -14,6 +14,7 @@
   color: #164a84;
   margin-right: 24px;
   width: 360px;
+  text-indent: 5px;
 }
 
 .goal-point {
@@ -28,15 +29,21 @@
 
 .new-goals {
   padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-goal {
+  display: flex;
 }
 
 input[type=text].new-goal-name {
-  width: 360px;
+  width: 362px;
   height: 28px;
   text-indent: 5px;
   border: 1px solid #164a84;
   border-radius: 5px;
-  margin-right: 4px;
+  margin-right: 10px;
   color: #164a84;
 }
 
@@ -46,12 +53,14 @@ input[type=number] {
   text-indent: 5px;
   border: 1px solid #164a84;
   border-radius: 5px;
-  margin-right: 3px;
+  margin-right: 23px;
   color: #164a84;
 }
 
 .save {
+  margin-top: -24px;
   margin-left: auto;
+  margin-bottom: 24px;
 }
 
 input[type=submit].save {

@@ -14,10 +14,12 @@
     </div>
     <div class="new-goals">
       <%= form_with model: @goal, local: true do |f| %>
-      <%= render "shared/error_messages", model: f.object %>
-        <%= f.text_field :name, placeholder: "項目", class: "new-goal-name" %>
-        <%= f.number_field :point, placeholder: "ポイント", class: "new-goal-point" %>
-        <%= f.submit "追加", class: "link" %>
+        <%= render "shared/error_messages", model: f.object %>
+        <div class="new-goal">
+          <%= f.text_field :name, placeholder: "項目", class: "new-goal-name" %>
+          <%= f.number_field :point, placeholder: "ポイント", class: "new-goal-point" %>
+          <%= f.submit "追加", class: "link" %>
+        </div>
       <% end %>
     </div>
     <div class="save">

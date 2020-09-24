@@ -3,9 +3,14 @@
     <div class="reflection-date">
       <%= @reflection.start_time.month %>/<%= @reflection.start_time.day%>
     </div>
-    <div class="achievement">
+    <div class="comment">
+      <%= @reflection.impression %>
+    </div>
+    <div class="achievements">
       <% @reflection.goal_reflections.each do |goal_reflection| %>
-        <%= goal_reflection.goal.name %>
+        <div class="achievement">
+          <%= goal_reflection.goal.name %>
+        </div>
       <% end %>
     </div>
     <div class="points">

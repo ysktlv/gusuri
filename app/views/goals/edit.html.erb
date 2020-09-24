@@ -1,9 +1,14 @@
-ポイント項目編集
-<div class="goals">
-  <%= form_with model: @goal, local: true do |f| %>
-  <%= render "shared/error_messages", model: f.object %>
-    <%= f.text_field :name %>
-    <%= f.number_field :point %>
-    <%= f.submit %>
-  <% end %>
+<div class="main">
+  <div class="main-content">
+    <div class="new-goals">
+      <%= form_with model: @goal, local: true do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
+        <div class="new-goal">
+          <%= f.text_field :name, placeholder: "項目", class: "new-goal-name" %>
+          <%= f.number_field :point, placeholder: "ポイント", class: "new-goal-point" %>
+          <%= f.submit "完了", class: "link" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

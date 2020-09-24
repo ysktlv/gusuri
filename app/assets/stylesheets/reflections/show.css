@@ -9,17 +9,28 @@
 .reflection-date {
   color: #164a84;
   font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.achievements {
+  color: #164a84;
   margin-bottom: 48px;
 }
 
 .achievement {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.comment {
   color: #164a84;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .points {
   color: #164a84;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 
 .total-point {
@@ -28,7 +39,7 @@
 
 .judgement {
   color: #164a84;
-  margin-bottom: 48px;
+  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   text-align: center;

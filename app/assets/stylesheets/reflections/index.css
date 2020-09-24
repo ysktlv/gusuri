@@ -13,12 +13,12 @@
 .reflection {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .reflection-section {
   display: flex;
-  margin: 5px 0px;
+  flex-wrap: wrap;
+  margin: 10px 0px;
   align-items: center;
 }
 
@@ -30,7 +30,7 @@
 
 input[type=date]{
   width: 130px;
-  height: 44px;
+  height: 42px;
   position: relative;
 }
 
@@ -118,10 +118,10 @@ input[type=checkbox]:checked + .checkbox:before {
 }
 
 input[type=text] {
-  width: 300px;
-  height: 42px;
+  width: 410px;
+  height: 40px;
   margin-right: 10px;
-  text-indent: 1em;
+  text-indent: 12px;
 }
 
 .impression {
