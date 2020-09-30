@@ -12,10 +12,10 @@ describe Goal do
       end
     end
     context "ポイント項目が登録できないとき" do
-      it "目標がないと登録できない" do
+      it "項目がないと登録できない" do
         @goal.name = nil
         @goal.valid?
-        expect(@goal.errors.full_messages).to include("目標を入力してください")
+        expect(@goal.errors.full_messages).to include("項目を入力してください")
       end
       it "ポイントがないと登録できない" do
         @goal.point = nil

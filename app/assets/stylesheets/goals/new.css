@@ -13,8 +13,8 @@
 .goal-name {
   color: #164a84;
   margin-right: 24px;
+  margin-left: 5px;
   width: 360px;
-  text-indent: 5px;
 }
 
 .goal-point {
@@ -43,7 +43,7 @@ input[type=text].new-goal-name {
   text-indent: 5px;
   border: 1px solid #164a84;
   border-radius: 5px;
-  margin-right: 10px;
+  margin-right: 18px;
   color: #164a84;
 }
 
@@ -53,7 +53,7 @@ input[type=number] {
   text-indent: 5px;
   border: 1px solid #164a84;
   border-radius: 5px;
-  margin-right: 23px;
+  margin-right: 20px;
   color: #164a84;
 }
 
