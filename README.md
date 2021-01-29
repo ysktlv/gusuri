@@ -1,24 +1,17 @@
-# README
+Gusuri
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 概要
 
-Things you may want to cover:
+# URL
 
-* Ruby version
+# テスト用アカウント
 
-* System dependencies
+# 利用方法
 
-* Configuration
+# 実装予定の機能
 
-* Database creation
+# ER図
 
-* Database initialization
+# ローカルでの動作方法
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 開発環境
