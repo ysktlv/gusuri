@@ -1,17 +1,41 @@
-Gusuri
+# Gusuri
 
-# 概要
+夜ふかしの悪循環から抜け出すためのアプリです。
+GUSURIで1日の満足度を高めましょう！
 
 # URL
 
+**https://gusuri.herokuapp.com/**
+
 # テスト用アカウント
 
-# 利用方法
+## Basic認証
 
-# 実装予定の機能
+ユーザー名 admin
+パスワード 2222
+
+## ログイン用
+
+ユーザー名 @gusuri3
+パスワード gusugusugusu3
 
 # ER図
 
-# ローカルでの動作方法
+![gusuri ER図](https://user-images.githubusercontent.com/68413373/106223102-268c3680-6224-11eb-9c7d-2fee037c3f41.png)
 
-# 開発環境
+
+# 構築方法
+
+git clone https://github.com/ysktlv/gusuri.git
+
+cd gusuri
+
+bundle install
+
+rails db:create
+
+rails db:migrate
+
+rails s
+
+http://localhost:3000
