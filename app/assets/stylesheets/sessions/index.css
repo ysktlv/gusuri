@@ -5,3 +5,24 @@
 .image {
   width: 100%;
 }
+
+.scroll {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+}
+
+.overview {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+.explanation {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+.start {
+  scroll-snap-align: start;
+  height: 100vh;
+}
