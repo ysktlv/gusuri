@@ -1,31 +1,54 @@
 <div class="scroll">
-  <div class="overview">
-    無駄な夜ふかし、していませんか？
-    寝るのがもったいなく感じる
-    なんとやくモヤモヤして眠れない
-    テレビやスマホをぼーっと眺めてしまう
-    それらは、1日の充実度が足りていないからではないですか？
-    小さい子どもは、ベッドに入るとすぐに寝ます。それは、毎日が楽しくて遊び疲れているから。
-    夜ふかしをすると次の日のパフォーマンスが低下し、充実した1日を過ごせずにまた夜ふかしをします。この悪循環からはなかなか抜け出せません。
-    GUSURIで1日の満足度を高めましょう！
+  <div class="explanation">
+    <div class="title">
+      無駄な夜ふかし、していませんか？
+    </div>
+    <ul class="subtitle">
+      <li>寝るのがもったいなく感じる</li>
+      <li>なんとやくモヤモヤして眠れない</li>
+      <li>スマホをぼーっと眺めてしまう</li>
+    </ul>
+    <div class="title">
+      GUSURIで1日の満足度を高め、快適な睡眠を！
+    </div>
   </div>
   <div class="explanation">
-    目標を設定します。
-    頑張らないと達成できないような目標を設定する必要はありません。寝る前すぐに実行できることで構いません。
+    <div class="title">
+      目標を設定します。
+    </div>
+    <%= image_tag "image1.png", class: "image" %>
+    <div class="subtitle">
+      頑張らないと達成できないような目標を設定する必要はありません。
+    </div>
   </div>
   <div class="explanation">
-    記録は簡単です。
-    1日の終わりに記録をつけましょう。チェックをしてひとこと感想を書くだけです。寝付けない日だけで構いません。
+    <div class="title">
+      記録は簡単です。
+    </div>
+    <%= image_tag "image2.png", class: "image" %>
+    <div class="subtitle">
+      1日の終わりに記録をつけましょう。チェックをしてひとこと感想を書くだけです。
+    </div>
   </div>
   <div class="explanation">
-    結果を判定してくれます。
-    100ポイント達成できていなくても、明日がんばれるようなメッセージが表示されます。
+    <div class="title">
+      結果を判定します。
+    </div>
+    <%= image_tag "image3.png", class: "image" %>
+    <div class="subtitle">
+      達成できていなくても、明日がんばれるようなメッセージが表示されます。
+    </div>
   </div>
   <div class="explanation">
-    すぐにツイート。
-    結果画面からすぐにツイートができます。
+    <div class="title">
+      すぐにツイート。
+    </div>
+    <%= image_tag "image4.png", class: "image" %>
+    <div class="subtitle">
+      結果画面からすぐにツイートができます。
+    </div>
   </div>
-  <div class="start">
-    <%= link_to "はじめる(Twitterログイン)", "/auth/twitter", class: "start-btn" %>
-  </div>
+</div>
+<div class="start">
+  <%= link_to "はじめる(Twitterログイン)", "/auth/twitter", class: "start-btn" %>
 </div>

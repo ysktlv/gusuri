@@ -1,28 +1,51 @@
-.explanation {
-  height: 100vh;
-}
-
-.image {
-  width: 100%;
-}
-
 .scroll {
   overflow: auto;
   scroll-snap-type: y mandatory;
   height: 100vh;
 }
 
-.overview {
-  scroll-snap-align: start;
-  height: 100vh;
-}
-
 .explanation {
   scroll-snap-align: start;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: #164a84;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.example {
+  color: #507ea4;
+  font-size: 24px;
+}
+
+.subtitle {
+  color: #507ea4;
+  list-style: square;
+  font-size: 24px;
 }
 
 .start {
-  scroll-snap-align: start;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 36px;
+}
+
+.start-btn {
+  border: 3px solid #a7bed1;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 12px 36px;
+  color: #164a84;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.image {
+  width: 100%;
 }
