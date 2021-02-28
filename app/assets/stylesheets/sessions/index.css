@@ -47,6 +47,10 @@
   font-size: 48px;
 }
 
+.start-btn:hover {
+  transform: scale(1.5, 1.5);
+}
+
 .image {
   width: 70%;
   padding: 12px;
