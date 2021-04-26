@@ -57,7 +57,7 @@ class ReflectionsController < ApplicationController
   end
 
   def reflection_params
-    params.require(:reflection).permit(:start_time, :impression, {goal_ids: []}).merge(user_id: current_user.id)
+    params.require(:reflection).permit(:start_time, :impression, { goal_ids: [] }).merge(user_id: current_user.id)
   end
 
   def set_reflection

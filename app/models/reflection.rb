@@ -8,6 +8,6 @@ class Reflection < ApplicationRecord
   validates :impression, presence: true
 
   def not_after_today
-    errors.add(:start_time, "は今日以前を選択してください") if start_time.nil? || start_time >= Date.today 
+    errors.add(:start_time, "は今日以前を選択してください") if start_time.nil? || start_time >= Date.today
   end
 end

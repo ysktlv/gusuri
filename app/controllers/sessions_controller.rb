@@ -1,14 +1,11 @@
 class SessionsController < ApplicationController
-
   def index
     redirect_to reflections_path if logged_in?
   end
 
   def create
-    unless request.env['omniauth.auth'][:uid]
-      redirect_to root_path
-    end
-    user_data = request.env['omniauth.auth']
+    redirect_to root_path unless request.env["omniauth.auth"][:uid]
+    user_data = request.env["omniauth.auth"]
     user = User.find_by(uid: user_data[:uid])
     if user
       log_in user
@@ -18,13 +15,11 @@ class SessionsController < ApplicationController
         uid: user_data[:uid],
         nickname: user_data[:info][:nickname],
         name: user_data[:info][:name],
-        image: user_data[:info][:image],
+        image: user_data[:info][:image]
       )
       session[:oauth_token] = user_data[:credentials][:token]
       session[:oauth_token_secret] = user_data[:credentials][:secret]
-      if new_user.save
-        log_in new_user
-      end
+      log_in new_user if new_user.save
       redirect_to new_goal_path
     end
   end
